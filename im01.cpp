@@ -38,13 +38,14 @@ String _read(String s)
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	//FILE *fp = fopen((const char *)s->getUTF8Data(), (const char *)x->getUTF8Data());
 	FILE *fp = fopen("/sd/im01/log.txt", "rb");
-	if (fp == NULL)
+	/*if (fp == NULL)
 	{
         _word = "No file";
 	}else{
 		_word = "Yes File";
-	}
-	fread(_word, 1, 10, fp);
+	}*/
+	size_t b_read = fread(_word, 1, 10, fp);
+	_word = (char *)b_read ;
 	String str = mkString(_word, strlen(_word));
 	return str;
 }
