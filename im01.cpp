@@ -39,12 +39,12 @@ String _read()
 	//FILE *fp = fopen((const char *)s->getUTF8Data(), (const char *)x->getUTF8Data());
 	FILE *fp = fopen("/sd/im01/log.txt", "rb");
 	if (fp == NULL)
-        return false;
+        return mkString("", 0);
 	if(fread(_word, 1, 5, fp))
 	{
 		return mkString(_word,5);
 	}else{
-		return mkString("");
+		return mkString("", 0);
 	}
 }
 
