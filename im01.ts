@@ -1,41 +1,73 @@
-/**
- * XinaBox IM01 extension for makecode
- *
- */
-
-/**
-* IM01 block
-*/
-//% color=#444444 icon="\uf0eb"
+//% color=#444444 icon="\uf012"
+//% groups=['On start', 'Variables', 'Optional']
 namespace IM01 {
 
-    //%blockId=IM01_cconnect
-    //%block="IM01 connect"
-    //%shim=IM01::connect
-    function connect(): void {
+    //%block="IM01 create folder %u"
+    export function createFolder(u: string): void {
+        mkdir("/sd/" + u)
         return;
     }
 
-    //%blockId=IM01_createFolder
-    //%block="IM01 create folder %folder"
-    //%shim=IM01::createFolder
-    export function createFolder(folder: string): void {
-        return;
+    //%block="IM01 size of file %u"
+    //%u.defl="log.txt"
+    export function sizeOfFile(u: string): number {
+        return 1
     }
 
-    //%blockId=IM01_createFiler
-    //%block="IM01 create file %file"
-    //%shim=IM01::createFile
-    export function createFile(file: string): void {
-        return;
+    //%block="IM01 remove file"
+    //%u.defl="log.txt"
+    export function removeFile(u: string): void {
+        remove("/sd/im01/" + u)
+        return
     }
 
-    //%blockId=IM01_readFile
-    //%block="IM01 read file %file"
-    //%shim=IM01::readFile
-    export function readFile(file: string): void {
-        return;
+    //%block="IM01 file %u exists"
+    //%u.defl="log.txt"
+    export function fileExists(u: string): boolean {
+        return true
     }
 
-    connect();
+    //%block="IM01 read file %u"
+    //%u.defl="log.txt"
+    export function readFile(u: string): boolean {
+        return true
+    }
+
+    //%block="IM01 overwrite file %u with %v"
+    //%u.defl="log.txt"
+    export function overwriteFile(u: string, v: string): void {
+        file("/sd/im01/" + u, v, "w")
+        return
+    }
+
+    //%block="IM01 append file %u with %v"
+    //%u.defl="log.txt"
+    export function appendFile(u: string, v: string): void {
+        file("/sd/im01/" + u, v, "a")
+        return
+    }
+
+    //%block="IM01 append file %u with line %v"
+    //%u.defl="log.txt"
+    export function appendFileLine(u: string, v: string): void {
+        file("/sd/im01/" + u, v + "\n", "a")
+        return
+    }
+
+    //%shim=im01::_mkdir
+    function mkdir(u: string): void {
+        return
+    }
+
+    //%shim=im01::_remove
+    function remove(u: string): void {
+        return
+    }
+
+    //%shim=im01::_file
+    function file(u: string, v: string, x: string): boolean {
+        return true
+    }
+
+    createFolder("im01")
 }

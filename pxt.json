@@ -1,12 +1,15 @@
 {
     "name": "IM01",
-    "version": "0.0.1",
-    "description": "XinaBox IM01 with SD card support",
-    "license": "MIT",
+    "version": "0.0.0",
+    "description": "",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "radio": "*"
     },
     "files": [
+        "README.md",
+        "main.blocks",
+        "main.ts",
         "FATDirHandle.cpp",
         "FATDirHandle.h",
         "FATFileHandle.cpp",
@@ -23,11 +26,14 @@
         "ff.cpp",
         "integer.h",
         "im01.cpp",
-        "im01.h",
         "im01.ts"
     ],
     "testFiles": [
-        "tests.ts"
+        "test.ts"
     ],
-    "public": true
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
 }

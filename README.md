@@ -1,31 +1,30 @@
-how do i sdcard????
+> Open this page at [https://.github.io//](https://.github.io//)
 
-**important notes about connecting the SF breakout**
+## Use this extension
 
- - vcc -> vcc
- - gnd -> gnd
- - cmd -> MOSI (labelled MISO on the breakout)
- - D0 -> MISO (labelled MOSI on the breakout)
- - CD -> gnd
- - CLK -> SCLK
- - D3 -> CS (12/16)
- - D1, D2 and WP can be left floating.
+This repository can be added as an **extension** in MakeCode.
 
+* open []()
+* click on **New Project**
+* click on **Extensions** under the gearwheel menu
+* search for **https://github.com/** and import
 
+## Edit this extension ![Build status badge](https://github.com//workflows/MakeCode/badge.svg)
 
-the EF breakout probably won't work without stepping it up to 5V first, because there is an unbypassable 3V3 LDO on the VCC line.
+To edit this repository in MakeCode.
 
+* open []()
+* click on **Import** then click on **Import URL**
+* paste **https://github.com/** and click import
 
-known issues:
+## Blocks preview
 
- - crashes after a couple of fwrites
+This image shows the blocks code from the last commit in master.
+This image may take a few minutes to refresh.
 
- - there is apparently a memory leak in fclose() in certain mbedos versions on ARM
+![A rendered view of the blocks](https://github.com//raw/master/.github/makecode/blocks.png)
 
+#### Metadata (used for search, rendering)
 
-
-potential solutions:
-
- - use petit-fatfs to reduce footprint even further in memory (potential reason for fwrite crash with pxt)
-
- - ???
+* for PXT/
+<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
