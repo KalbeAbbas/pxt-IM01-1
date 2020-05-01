@@ -46,7 +46,7 @@ String _read(String s)
 	
 	if (fp == NULL)
 	{
-        return s;
+        return mkString(error_no_file, strlen(error_no_file));
 	}else{
 		
 	// obtain file size:
