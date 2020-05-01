@@ -45,9 +45,11 @@ bool _read()
 }
 
 //%
-string _readFile()
+String _readFile()
 {
-	string str = "hello";
+	char * _word = "hello";
+	
+	String str = mkString(_word, strlen(_word));
 	return str;
 }
 
