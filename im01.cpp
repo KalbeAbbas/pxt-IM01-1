@@ -35,17 +35,25 @@ bool _file(String s, String v, String x)
 String _read(String s)
 {
 	char * _word = "New file";
+	long lSize;
+	char* path = "/sd/im01/";
+	strcat(path, s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
-	//FILE *fp = fopen((const char *)s->getUTF8Data(), (const char *)x->getUTF8Data());
-	FILE *fp = fopen("/sd/im01/log.txt", "rb");
-	/*if (fp == NULL)
+	FILE *fp = fopen((const char *)path, "rb");
+	
+	// obtain file size:
+	fseek (fp , 0 , SEEK_END);
+	lSize = ftell(fp);
+	rewind (fp);
+	//FILE *fp = fopen((const char *)p , "rb");
+	if (fp == NULL)
 	{
         _word = "No file";
 	}else{
 		_word = "Yes File";
-	}*/
-	_word = (char*) malloc (sizeof(char)*20);
-	size_t b_read = fread(_word, 1, 20, fp);
+	}
+	_word = (char*) malloc (sizeof(char)*lSize);
+	size_t b_read = fread(_word, sizeof(char), lSize, fp);
 	fclose(fp);
 	
 	/*if(b_read != 10)
