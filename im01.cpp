@@ -45,7 +45,6 @@ String _read(String s)
 	}
 	fclose(fp);
 	String str = mkString(_word, strlen(_word));
-	free(_word);
 	return str;
 }
 
