@@ -37,17 +37,16 @@ String _read(String s)
 	char * _word;
 	char* error_no_file = "ERROR! NO FILE";
 	char* cant_read_file = "ERROR! CANT READ FILE";
-	char* path = "/sd/im01/";
+	//char* path = "/sd/im01/";
 	long lSize;
 	size_t b_read;
 	
-	strcat(path,(const char *)s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
-	FILE *fp = fopen(path, "rb");
+	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
 	
 	if (fp == NULL)
 	{
-        return mkString(path, strlen(path));
+        return mkString(error_no_file, strlen(error_no_file));
 	}else{
 		
 	// obtain file size:

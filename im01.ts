@@ -29,9 +29,8 @@ namespace IM01 {
 
     //%block="IM01 read file %u"
     //%u.defl="log.txt"
-	//% shim=im01::_read
     export function readFile(u: string): string {
-        return ""
+        return file_read("/sd/im01/" + u)
     }
 
     //%block="IM01 overwrite file %u with %v"
@@ -76,6 +75,12 @@ namespace IM01 {
     function file(u: string, v: string, x: string): boolean {
         return true
     }
+	
+	//% shim=im01::_read
+	function file_read(u: string): string
+	{
+		return ""
+	}
 	
 
     createFolder("im01")
