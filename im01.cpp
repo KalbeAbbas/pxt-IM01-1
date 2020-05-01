@@ -35,6 +35,8 @@ bool _file(String s, String v, String x)
 String _read(String s)
 {
 	char * _word = "New file";
+	char* error_no_file = "ERROR! NO FILE";
+	char* cant_read_file = "ERROR! CANT READ FILE";
 	char* path = "/sd/im01/log.txt";
 	long lSize;
 	strcat(path, s->getUTF8Data());
@@ -45,23 +47,21 @@ String _read(String s)
 	fseek (fp , 0 , SEEK_END);
 	lSize = ftell(fp);
 	rewind (fp);
-	//FILE *fp = fopen((const char *)p , "rb");
-	/*if (fp == NULL)
+	
+	if (fp == NULL)
 	{
-        _word = "No file";
-	}else{
-		_word = "Yes File";
-	}*/
+        return mkString(error_no_file, strlen(error_no_file));
+	}
+	
 	_word = (char*) malloc (sizeof(char)*lSize);
 	size_t b_read = fread(_word, sizeof(char), lSize, fp);
 	fclose(fp);
 	
-	/*if(b_read != 10)
+	if(b_read != lSize)
 	{
-		_word = "no count";
-	}else{
-		_word = "count";
-	}*/
+        return mkString(cant_read_file, strlen(cant_read_file));
+	}
+	
 	String str = mkString(_word, strlen(_word));
 	return str;
 }
