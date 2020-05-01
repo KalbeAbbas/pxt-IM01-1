@@ -42,9 +42,9 @@ String _read(String s)
 	FILE *fp = fopen((const char *)path, "rb");
 	
 	// obtain file size:
-	fseek (fp , 0 , SEEK_END);
+	/*fseek (fp , 0 , SEEK_END);
 	lSize = ftell(fp);
-	rewind (fp);
+	rewind (fp);*/
 	//FILE *fp = fopen((const char *)p , "rb");
 	if (fp == NULL)
 	{
