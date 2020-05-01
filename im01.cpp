@@ -41,18 +41,18 @@ String _read(String s)
 	FILE *fp = fopen(path, "rb");
 	
 	// obtain file size:
-	/*fseek (fp , 0 , SEEK_END);
+	fseek (fp , 0 , SEEK_END);
 	lSize = ftell(fp);
-	rewind (fp);*/
+	rewind (fp);
 	//FILE *fp = fopen((const char *)p , "rb");
-	if (fp == NULL)
+	/*if (fp == NULL)
 	{
         _word = "No file";
 	}else{
 		_word = "Yes File";
-	}
-	/*_word = (char*) malloc (sizeof(char)*lSize);
-	size_t b_read = fread(_word, sizeof(char), lSize, fp);*/
+	}*/
+	_word = (char*) malloc (sizeof(char)*lSize);
+	size_t b_read = fread(_word, sizeof(char), lSize, fp);
 	fclose(fp);
 	
 	/*if(b_read != 10)
