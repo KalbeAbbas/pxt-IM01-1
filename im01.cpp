@@ -44,18 +44,20 @@ String _read(String s)
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen(path, "rb");
 	
+	if (fp == NULL)
+	{
+        return mkString(error_no_file, strlen(error_no_file));
+	}else{
+		
 	// obtain file size:
 	fseek (fp , 0 , SEEK_END);
 	lSize = ftell(fp);
 	rewind (fp);
 	
-	if (fp == NULL)
-	{
-        return mkString(error_no_file, strlen(error_no_file));
-	}
-	
 	_word = (char*) malloc (sizeof(char)*lSize);
 	size_t b_read = fread(_word, sizeof(char), lSize, fp);
+	}
+	
 	fclose(fp);
 	
 	if(b_read != lSize)
