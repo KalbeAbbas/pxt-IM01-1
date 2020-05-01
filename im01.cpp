@@ -39,7 +39,7 @@ String _read(String s)
 	char* path = "/sd/im01/";
 	strcat(path, s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
-	FILE *fp = fopen((const char *)path, "rb");
+	FILE *fp = fopen(path, "rb");
 	
 	// obtain file size:
 	/*fseek (fp , 0 , SEEK_END);
