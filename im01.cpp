@@ -41,7 +41,7 @@ String _read(String s)
 	long lSize;
 	size_t b_read;
 	
-	strcat(path, s->getUTF8Data());
+	strcat(path,(const char *)s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen(path, "rb");
 	
