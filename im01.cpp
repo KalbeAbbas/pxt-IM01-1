@@ -4,6 +4,7 @@
 
 namespace im01
 {
+	
 //%
 void _mkdir(String s)
 {
@@ -71,5 +72,12 @@ String _read(String s)
 	return str;
 }
 
+String _readFile()
+{
+	char * _word = "hello";
+	
+	String str = mkString(_word, strlen(_word));
+	return str;
+}
 
 } // namespace im01
