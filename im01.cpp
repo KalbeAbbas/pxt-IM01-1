@@ -30,4 +30,18 @@ bool _file(String s, String v, String x)
     fclose(fp);
     return true;
 }
+
+//%
+bool _read()
+{
+	char _word[100];
+    SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
+	//FILE *fp = fopen((const char *)s->getUTF8Data(), (const char *)x->getUTF8Data());
+	FILE *fp = fopen("log.txt", "rb");
+	if (fp == NULL)
+        return false;
+	fread(_word, 1, 1, fp);
+	return true;
+}
+
 } // namespace im01

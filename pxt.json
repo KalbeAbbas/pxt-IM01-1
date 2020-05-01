@@ -9,7 +9,6 @@
     "files": [
         "README.md",
         "main.blocks",
-        "main.ts",
         "FATDirHandle.cpp",
         "FATDirHandle.h",
         "FATFileHandle.cpp",
