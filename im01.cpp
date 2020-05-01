@@ -34,7 +34,7 @@ bool _file(String s, String v, String x)
 //%
 String _read(String s)
 {
-	char * _word = "New file";
+	char * _word;
 	char* error_no_file = "ERROR! NO FILE";
 	char* cant_read_file = "ERROR! CANT READ FILE";
 	char* path = "/sd/im01/log.txt";
@@ -53,7 +53,7 @@ String _read(String s)
         return mkString(error_no_file, strlen(error_no_file));
 	}
 	
-	//_word = (char*) malloc (sizeof(char)*lSize);
+	_word = (char*) malloc (sizeof(char)*lSize);
 	size_t b_read = fread(_word, sizeof(char), lSize, fp);
 	fclose(fp);
 	
@@ -63,6 +63,8 @@ String _read(String s)
 	}
 	
 	String str = mkString(_word, strlen(_word));
+	
+	free(_word);
 	return str;
 }
 
