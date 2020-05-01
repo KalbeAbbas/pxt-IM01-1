@@ -63,7 +63,7 @@ String _read(String s)
         return mkString(cant_read_file, strlen(cant_read_file));
 	}
 	
-	String str = mkString(path, strlen(path));
+	String str = mkString(error_no_file, strlen(error_no_file));
 	
 	free(_word);
 	return str;
