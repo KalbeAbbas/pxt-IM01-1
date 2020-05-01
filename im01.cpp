@@ -53,7 +53,7 @@ String _read(String s)
         return mkString(error_no_file, strlen(error_no_file));
 	}
 	
-	_word = (char*) malloc (sizeof(char)*lSize);
+	//_word = (char*) malloc (sizeof(char)*lSize);
 	size_t b_read = fread(_word, sizeof(char), lSize, fp);
 	fclose(fp);
 	
