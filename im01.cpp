@@ -44,4 +44,11 @@ bool _read()
 	return true;
 }
 
+//%
+string _readFile()
+{
+	string str = "hello";
+	return str;
+}
+
 } // namespace im01

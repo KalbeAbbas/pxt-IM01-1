@@ -54,6 +54,13 @@ namespace IM01 {
         return
     }
 
+	//% block="get string"
+	//% shim=im01::_readFile
+	export function readString(): string
+	{
+		return ""
+	}
+
     //%shim=im01::_mkdir
     function mkdir(u: string): void {
         return
