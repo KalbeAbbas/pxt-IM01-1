@@ -36,10 +36,10 @@ String _read(String s)
 {
 	char * _word = "New file";
 	long lSize;
-	char* path = "/sd/im01/log.txt";
+	//char* path = "/sd/im01/log.txt";
 	//strcat(path, s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
-	FILE *fp = fopen(path, "rb");
+	FILE *fp = fopen("/sd/im01/log.txt", "rb");
 	
 	// obtain file size:
 	/*fseek (fp , 0 , SEEK_END);
