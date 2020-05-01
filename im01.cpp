@@ -44,8 +44,8 @@ String _read(String s)
 	}else{
 		_word = "Yes File";
 	}*/
-	_word = (char*) malloc (sizeof(char)*10);
-	size_t b_read = fread(_word, 1, 10, fp);
+	_word = (char*) malloc (sizeof(char)*20);
+	size_t b_read = fread(_word, 1, 20, fp);
 	fclose(fp);
 	
 	/*if(b_read != 10)
