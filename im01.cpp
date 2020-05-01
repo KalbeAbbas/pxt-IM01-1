@@ -56,16 +56,16 @@ String _read(String s)
 	
 	_word = (char*) malloc (sizeof(char)*lSize);
 	b_read = fread(_word, sizeof(char), lSize, fp);
-	}
 	
 	fclose(fp);
+	}
 	
 	if(b_read != lSize)
 	{
         return mkString(cant_read_file, strlen(cant_read_file));
 	}
 	
-	String str = mkString(error_no_file, strlen(error_no_file));
+	String str = mkString(_word, strlen(_word));
 	
 	free(_word);
 	return str;
