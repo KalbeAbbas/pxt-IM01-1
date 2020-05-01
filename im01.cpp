@@ -39,6 +39,7 @@ String _read(String s)
 	char* cant_read_file = "ERROR! CANT READ FILE";
 	char* path = "/sd/im01/";
 	long lSize;
+	size_t b_read;
 	
 	strcat(path, s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
@@ -55,7 +56,7 @@ String _read(String s)
 	rewind (fp);
 	
 	_word = (char*) malloc (sizeof(char)*lSize);
-	size_t b_read = fread(_word, sizeof(char), lSize, fp);
+	b_read = fread(_word, sizeof(char), lSize, fp);
 	}
 	
 	fclose(fp);
