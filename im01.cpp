@@ -45,7 +45,7 @@ String _read(String s)
 		_word  = "Yes File";
 	}
 	//fread(_word, 1, 5, fp);
-	String str = mkString(_word, strlen(_word))
+	String str = mkString(_word, strlen(_word));
 	return str;
 }
 
