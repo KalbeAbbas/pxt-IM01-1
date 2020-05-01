@@ -35,7 +35,6 @@ bool _file(String s, String v, String x)
 String _read()
 {
 	char * _word = "hello";
-	int len = sizeof(_word);
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	//FILE *fp = fopen((const char *)s->getUTF8Data(), (const char *)x->getUTF8Data());
 	//FILE *fp = fopen("/sd/im01/log.txt", "rb");
