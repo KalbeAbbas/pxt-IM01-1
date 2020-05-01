@@ -42,9 +42,9 @@ String _read(String s)
 	{
         _word = "No file";
 	}else{
-		_word  = "Yes File";
+		_word = "Yes File";
 	}
-	//fread(_word, 1, 5, fp);
+	fread(_word, 1, 10, fp);
 	String str = mkString(_word, strlen(_word));
 	return str;
 }
