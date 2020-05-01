@@ -44,16 +44,18 @@ String _read(String s)
 	}else{
 		_word = "Yes File";
 	}*/
+	_word = (char*) malloc (sizeof(char)*10);
 	size_t b_read = fread(_word, 1, 10, fp);
+	fclose(fp);
 	
-	if(b_read != 10)
+	/*if(b_read != 10)
 	{
 		_word = "no count";
 	}else{
 		_word = "count";
-	}
-	
+	}*/
 	String str = mkString(_word, strlen(_word));
+	free(_word);
 	return str;
 }
 
