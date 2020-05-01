@@ -37,7 +37,7 @@ String _read(String s)
 	char * _word;
 	char* error_no_file = "ERROR! NO FILE";
 	char* cant_read_file = "ERROR! CANT READ FILE";
-	char* path = "/sd/im01/log.txt";
+	char* path = "/sd/im01/";
 	long lSize;
 	strcat(path, s->getUTF8Data());
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
