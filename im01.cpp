@@ -34,12 +34,12 @@ bool _file(String s, String v, String x)
 //%
 String _read(String s)
 {
-	char * _word = "hello";
-	int len = sizeof(_word);
+	char * _word;
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	//FILE *fp = fopen((const char *)s->getUTF8Data(), (const char *)x->getUTF8Data());
 	FILE *fp = fopen("/sd/im01/log.txt", "rb");
-	return mkString(_word, len);
+	fread(_word, 1, 5, fp);
+	return mkString(_word, strlen(_word));
 }
 
 //%
