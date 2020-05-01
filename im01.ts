@@ -29,8 +29,9 @@ namespace IM01 {
 
     //%block="IM01 read file %u"
     //%u.defl="log.txt"
-    export function readFile(u: string): boolean {
-        return true
+	//% shim=im01::_read
+    export function readFile(u: string): string {
+        return ""
     }
 
     //%block="IM01 overwrite file %u with %v"
