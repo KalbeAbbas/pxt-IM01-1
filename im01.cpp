@@ -45,7 +45,14 @@ String _read(String s)
 		_word = "Yes File";
 	}*/
 	size_t b_read = fread(_word, 1, 10, fp);
-	_word = (char *)b_read ;
+	
+	if(b_read != 10)
+	{
+		_word = "no count";
+	}else{
+		_word = "count";
+	}
+	
 	String str = mkString(_word, strlen(_word));
 	return str;
 }
