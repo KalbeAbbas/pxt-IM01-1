@@ -90,7 +90,7 @@ String _readBytes(String s, int bytes)
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
 	
-	if(prev_file != s)
+	if(strcmp(s->getUTF8Data(), prev_file->getUTF8Data()) != 0)
 	{
 		prev_file = s;
 		ptr_position = 0;
