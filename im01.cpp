@@ -6,7 +6,6 @@ namespace im01
 {
 	
 long ptr_position = 0;
-String prev_file;
 	
 //%
 void _mkdir(String s)
@@ -85,16 +84,18 @@ String _readBytes(String s, int bytes)
 	long lSize;
 	size_t b_read;
 	
+	const char * one_char = s->getUTF8DataAt(10);
+	
 	lSize = bytes;
 	
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
 	
-	if(strcmp(s->getUTF8Data(), prev_file->getUTF8Data()) != 0)
+	if(one_char != 'o')
 	{
-		prev_file = s;
 		ptr_position = 0;
 	}
+	
 	
 	if (fp == NULL)
 	{
@@ -119,7 +120,7 @@ String _readBytes(String s, int bytes)
 	String str = mkString(_word, strlen(_word));
 	
 	free(_word);
-	return prev_file;
+	return str;
 }
 
 //%
