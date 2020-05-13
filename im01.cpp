@@ -119,7 +119,7 @@ String _readBytes(String s, int bytes)
 	String str = mkString(_word, strlen(_word));
 	
 	free(_word);
-	return str;
+	return prev_file;
 }
 
 //%
