@@ -91,7 +91,7 @@ String _readBytes(String s, int bytes)
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
 	
-	if(one_char != 'o')
+	if(one_char[0] != 'o')
 	{
 		ptr_position = 0;
 	}
