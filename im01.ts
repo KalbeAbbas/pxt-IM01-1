@@ -75,6 +75,13 @@ namespace IM01 {
 		return ""
 	}
 	
+	//% IM01 read file %u| %v bytes
+	//% shim=im01::_readBytes
+	function file_read(u: string, number v): string
+	{
+		return ""
+	}
+	
 
     createFolder("im01")
 }
