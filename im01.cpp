@@ -5,6 +5,8 @@
 namespace im01
 {
 	
+long ptr_position = 0;
+	
 //%
 void _mkdir(String s)
 {
@@ -92,9 +94,13 @@ String _readBytes(String s, int bytes)
 	{
         return mkString(error_no_file, strlen(error_no_file));
 	}else{
+		
+	fseek(fp, ptr_position, SEEK_SET);
 	
 	_word = (char*) malloc (sizeof(char)*lSize);
 	b_read = fread(_word, sizeof(char), lSize, fp);
+	
+	ptr_position = ftell(fp);
 	
 	fclose(fp);
 	}

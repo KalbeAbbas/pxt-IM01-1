@@ -77,7 +77,7 @@ namespace IM01 {
 	
 	//% IM01 read file %u| %v bytes
 	//% shim=im01::_readBytes
-	function file_read(u: string, number v): string
+	function file_read_bytes(u: string, v: number): string
 	{
 		return ""
 	}
