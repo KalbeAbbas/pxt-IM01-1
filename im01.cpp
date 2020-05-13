@@ -6,6 +6,7 @@ namespace im01
 {
 	
 long ptr_position = 0;
+String prev_file;
 	
 //%
 void _mkdir(String s)
@@ -81,7 +82,6 @@ String _readBytes(String s, int bytes)
 	char * _word;
 	char* error_no_file = "ERROR! NO FILE";
 	char* cant_read_file = "ERROR! CANT READ FILE";
-	//char* path = "/sd/im01/";
 	long lSize;
 	size_t b_read;
 	
@@ -89,6 +89,12 @@ String _readBytes(String s, int bytes)
 	
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
+	
+	if(prev_file != s)
+	{
+		prev_file = s;
+		ptr_position = 0;
+	}
 	
 	if (fp == NULL)
 	{
