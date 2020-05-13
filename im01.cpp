@@ -133,7 +133,7 @@ int _fileSize(String s)
 	fseek (fp , 0 , SEEK_END);
 	lSize = ftell(fp);
 	rewind(fp);
-	
+	fclose(fp);
 	}
 	
 	return lSize;
