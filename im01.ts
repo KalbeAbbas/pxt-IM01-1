@@ -32,6 +32,12 @@ namespace IM01 {
     export function readFile(u: string): string {
         return file_read("/sd/im01/" + u)
     }
+	
+	//%block="IM01 read file %u| %v bytes"
+    //%u.defl="log.txt"
+    export function readFileBytes(u: string, v: number): string {
+        return file_read_bytes("/sd/im01/" + u, v)
+    }
 
     //%block="IM01 overwrite file %u with %v"
     //%u.defl="log.txt"
@@ -75,7 +81,6 @@ namespace IM01 {
 		return ""
 	}
 	
-	//% IM01 read file %u| %v bytes
 	//% shim=im01::_readBytes
 	function file_read_bytes(u: string, v: number): string
 	{
