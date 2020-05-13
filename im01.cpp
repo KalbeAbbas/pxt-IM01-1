@@ -116,5 +116,27 @@ String _readBytes(String s, int bytes)
 	return str;
 }
 
+//%
+int _fileSize(String s)
+{
+	long lSize;
+	
+    SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
+	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
+	
+	if (fp == NULL)
+	{
+        return 0;
+	}else{
+		
+	// obtain file size:
+	fseek (fp , 0 , SEEK_END);
+	lSize = ftell(fp);
+	
+	}
+	
+	return lSize;
+}
+
 
 } // namespace im01

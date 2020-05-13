@@ -11,7 +11,7 @@ namespace IM01 {
     //%block="IM01 size of file %u"
     //%u.defl="log.txt"
     export function sizeOfFile(u: string): number {
-        return 1
+        return fileSize("/sd/im01/" + u)
     }
 
     //%block="IM01 remove file"
@@ -85,6 +85,12 @@ namespace IM01 {
 	function file_read_bytes(u: string, v: number): string
 	{
 		return ""
+	}
+	
+	//% shim=im01::_fileSize
+	function fileSize(u: string): number
+	{
+		return 1
 	}
 	
 
