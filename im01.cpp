@@ -91,11 +91,6 @@ String _readBytes(String s, int bytes, bool cont)
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
 	
-	if(!cont)
-	{
-		ptr_position = 0;
-	}
-	
 	
 	if (fp == NULL)
 	{
@@ -110,6 +105,11 @@ String _readBytes(String s, int bytes, bool cont)
 	ptr_position = ftell(fp);
 	
 	fclose(fp);
+	}
+	
+	if(!cont)
+	{
+		ptr_position = 0;
 	}
 	
 	if(b_read != lSize)
