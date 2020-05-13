@@ -76,7 +76,7 @@ String _read(String s)
 
 
 //%
-String _readBytes(String s, int bytes)
+String _readBytes(String s, int bytes, bool cont)
 {
 	char * _word;
 	char* error_no_file = "ERROR! NO FILE";
@@ -91,7 +91,7 @@ String _readBytes(String s, int bytes)
     SDFileSystem sd(P0_21, P0_22, P0_23, P0_16, "sd");
 	FILE *fp = fopen((const char *)s->getUTF8Data(), "rb");
 	
-	if('o' != 'o')
+	if(!cont)
 	{
 		ptr_position = 0;
 	}
