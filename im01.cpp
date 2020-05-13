@@ -132,6 +132,7 @@ int _fileSize(String s)
 	// obtain file size:
 	fseek (fp , 0 , SEEK_END);
 	lSize = ftell(fp);
+	rewind(fp);
 	
 	}
 	
